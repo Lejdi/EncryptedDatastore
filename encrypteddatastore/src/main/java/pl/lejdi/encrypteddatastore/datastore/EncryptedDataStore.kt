@@ -16,7 +16,7 @@ import javax.crypto.spec.GCMParameterSpec
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "encrypted_datastore")
 
-class EncryptedDataStore(context: Context, private val gson: Gson) {
+open class EncryptedDataStore(context: Context, private val gson: Gson) {
     private val dataStore = context.dataStore
 
     suspend fun insert(key: String, value: Any) {

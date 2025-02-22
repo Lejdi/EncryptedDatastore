@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.android.hilt)
-    alias(libs.plugins.kapt)
 }
 
 android {
@@ -31,18 +29,7 @@ android {
     }
 }
 
-kapt {
-    correctErrorTypes = true
-}
-
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-
-    //hilt
-    implementation(libs.android.hilt)
-    kapt(libs.android.hilt.compiler)
-
     //datastore
     implementation(libs.androidx.datastore)
 
